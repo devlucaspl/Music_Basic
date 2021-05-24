@@ -15,10 +15,20 @@ class PlayerPageState extends State<PlayerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('Tocando Musica'),
       ),
       body: Column(
-        children: <Widget>[],
+        children: <Widget>[
+          Container(
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: 350,
+              decoration: BoxDecoration(
+                image: DecorationImage(image: NetworkImage(''))
+              ),
+            ),
+          )
+        ],
       ),
     );
   }

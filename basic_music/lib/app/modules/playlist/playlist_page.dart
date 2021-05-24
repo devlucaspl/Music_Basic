@@ -1,6 +1,8 @@
+import 'package:flutter/painting.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:basic_music/app/modules/playlist/playlist_store.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PlaylistPage extends StatefulWidget {
   final String title;
@@ -19,8 +21,22 @@ class PlaylistPageState extends State<PlaylistPage> {
         backgroundColor: Colors.black,
       ),
       backgroundColor: Colors.black,
-      body: Column(
-        children: <Widget>[],
+      body: ListView.builder(
+        itemCount: 20,
+        itemBuilder: (_, int index){
+          return ListTile(
+            onTap: () => Modular.to.pushNamed(
+                '/'),
+            leading: Image.network('https://wallpapersfull.com/wallpapers/2019/art-wallpaper-20797.jpg'),
+            title: Text(
+                'Californication',
+                style: GoogleFonts.notoSans()),
+            subtitle: Text(
+                'Red Hot Chili Peppers',
+                style: GoogleFonts.notoSans()),
+            contentPadding: EdgeInsets.all(10),
+          );
+        },
       ),
     );
   }
