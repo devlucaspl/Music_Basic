@@ -65,6 +65,7 @@ class PlayerPageState extends State<PlayerPage> {
           buildImageHeader(),
           buildNameMusic(),
           buildProgessBar(),
+          buildButtons(),
         ],
       ),
     );
@@ -113,7 +114,67 @@ class PlayerPageState extends State<PlayerPage> {
 
   buildProgessBar(){
     return Column(
+      children: <Widget>[
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+          child: LinearProgressIndicator(
+            backgroundColor: Colors.white,
+            valueColor: AlwaysStoppedAnimation<Color>(Colors.grey),
+            value: 0.2,
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.only(left: 35, right: 35),
+          child: Row(
+            children: <Widget>[
+              Text('0:15'),
+              Expanded(child: Container()),
+              Text('2:00')
+            ],
+          ),
+        )
+      ],
+    );
+  }
 
+  buildButtons(){
+    return Container(
+      padding: EdgeInsets.all(20),
+      child: Row(
+        children: <Widget>[
+          TextButton(
+              onPressed: (){
+
+              },
+              child: Icon(
+                Icons.fast_rewind,
+                size: 70,
+                color: Colors.white,
+              ),
+          ),
+          Expanded(
+            child: TextButton(
+                    onPressed: (){},
+              child: Icon(
+                Icons.play_circle_fill,
+                size: 70,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          TextButton(
+            onPressed: (){
+
+            },
+            child: Icon(
+              Icons.fast_forward,
+              size: 70,
+              color: Colors.white,
+            ),
+          ),
+
+        ],
+      ),
     );
   }
 
