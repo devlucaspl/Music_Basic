@@ -33,8 +33,9 @@ class PlaylistPageState extends State<PlaylistPage> {
         itemCount: 20,
         itemBuilder: (_, int index){
           return ListTile(
-            onTap: () => Modular.to.pushNamed('/player', arguments: "https://wallpapersfull.com/wallpapers/2019/art-wallpaper-20797.jpg"),
-            leading: Image.network('https://wallpapersfull.com/wallpapers/2019/art-wallpaper-20797.jpg'),
+            onTap: () => Modular.to.pushNamed('/player',
+                arguments: "http://192.168.0.108:8096/emby/Items/228/Images/Primary?maxHeight=800&maxWidth=800&tag=c499c6150303b9eabc54e0092cb37882&quality=90"),
+            leading: Image.network('http://192.168.0.108:8096/emby/Items/232/Images/Backdrop/0?tag=57a09dfc97708618e7451f2a180c7973&maxWidth=1300&quality=70'),
             title: Text(
                 'Californication',
                 style: GoogleFonts.notoSans()),
