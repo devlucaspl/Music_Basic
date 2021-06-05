@@ -31,7 +31,9 @@ dependencies:
   flutter_modular: ^3.2.2+1
   flutter_triple: ^1.0.6
   google_fonts: ^2.1.0
-  audioplayer2: ^0.5.2
+  just_audio: ^0.7.5
+  audio_session: ^0.1.2
+  audioplayers: ^0.19.0
 
 dev_dependencies:
   flutter_modular_test: ^1.0.1

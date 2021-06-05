@@ -4,6 +4,7 @@ import 'package:basic_music/app/modules/playlist/playlist_store.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
 class PlaylistPage extends StatefulWidget {
   final String title;
   const PlaylistPage({Key? key, this.title = 'PlaylistPage'}) : super(key: key);
@@ -13,7 +14,10 @@ class PlaylistPage extends StatefulWidget {
 
 class PlayerPage extends StatefulWidget {
   final String url;
-  const PlayerPage({Key? key, this.url = 'Tocando Musica'}) : super(key: key);
+  final String music;
+  const PlayerPage({Key? key,
+    this.url = 'Tocando Musica',
+    this.music = 'http://192.168.0.110:8096/emby/Audio/168/universal?UserId=866b0872c43e40f9a5482182f739d907&DeviceId=e839f2c1-c9b0-4c24-97f8-5ca8fe601ebf&MaxStreamingBitrate=140000000&Container=opus%2Cmp3%7Cmp3%2Cmp2%2Cmp3%7Cmp2%2Caac%7Caac%2Cm4a%7Caac%2Cmp4%7Caac%2Cflac%2Cwebma%2Cwebm%2Cwav%7CPCM_S16LE%2Cogg&TranscodingContainer=aac&TranscodingProtocol=hls&AudioCodec=aac&api_key=f3ea9cc7f3c2430f902586661b426d32&PlaySessionId=1622869805590&StartTimeTicks=0&EnableRedirection=true'}) : super(key: key);
   @override
   PlayerPageState createState() => PlayerPageState();
 }
@@ -34,13 +38,13 @@ class PlaylistPageState extends State<PlaylistPage> {
         itemBuilder: (_, int index){
           return ListTile(
             onTap: () => Modular.to.pushNamed('/player',
-                arguments: "http://192.168.0.108:8096/emby/Items/228/Images/Primary?maxHeight=800&maxWidth=800&tag=c499c6150303b9eabc54e0092cb37882&quality=90"),
-            leading: Image.network('http://192.168.0.108:8096/emby/Items/232/Images/Backdrop/0?tag=57a09dfc97708618e7451f2a180c7973&maxWidth=1300&quality=70'),
+                arguments: "http://192.168.0.110:8096/emby/Items/168/Images/Primary?tag=1ac1cefcb6208caa4ace7bf29efb12a2&quality=90"),
+            leading: Image.network('http://192.168.0.110:8096/emby/Items/168/Images/Primary?tag=1ac1cefcb6208caa4ace7bf29efb12a2&quality=90'),
             title: Text(
-                'Californication',
+                'Cada Minuto',
                 style: GoogleFonts.notoSans()),
             subtitle: Text(
-                'Red Hot Chili Peppers',
+                'Scalene',
                 style: GoogleFonts.notoSans()),
             contentPadding: EdgeInsets.all(10),
           );
@@ -96,14 +100,14 @@ class PlayerPageState extends State<PlayerPage> {
     return Column(
       children: [
         Container(
-          child: Text('Californication',
+          child: Text('Cada Minuto',
             style: GoogleFonts.notoSans(
                 fontSize: 25,
                 fontWeight: FontWeight.bold)),
 
         ),
         Container(
-          child: Text('Red Hot Chili Peppers',
+          child: Text('Scalene',
               style: GoogleFonts.notoSans(
                   fontSize: 15,
                   fontWeight: FontWeight.normal)),
@@ -139,6 +143,7 @@ class PlayerPageState extends State<PlayerPage> {
   }
 
   buildButtons(){
+
     return Container(
       padding: EdgeInsets.all(20),
       child: Row(
@@ -155,7 +160,9 @@ class PlayerPageState extends State<PlayerPage> {
           ),
           Expanded(
             child: TextButton(
-                    onPressed: (){},
+                    onPressed: (){
+
+                    },
               child: Icon(
                 Icons.play_circle_fill,
                 size: 70,
@@ -178,6 +185,7 @@ class PlayerPageState extends State<PlayerPage> {
       ),
     );
   }
+
 
 }
 
